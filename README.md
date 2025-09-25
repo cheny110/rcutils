@@ -65,3 +65,8 @@ The API is a combination of parts:
     - rcutils/types/string_map.h
 - Macros for controlling symbol visibility and linkage for this library:
   - rcutils/visibility_control.h
+
+##Compile Dependencies
+```bash
+  sudo apt install ros-foxy-mimick-vendor ros-foxy-osrf-testing-tools-cpp
+```
