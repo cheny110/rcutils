@@ -1,4 +1,4 @@
 __pycache__
 doc_output
 **/debian
-**/.obj-aarch64-linux-gnu
+.obj-**-linux-gnu
