@@ -1,5 +1,9 @@
 # rcutils: ROS 2 C Utilities data structures
 
+## NOTE
+This is a forked project from orignal repository : [rcutils](https://github.com/ros2/rcutils)
+Some modifications has been modified for self-maintained repository to support datetime logging format feature which should be available with **ros2 humble** distribution.
+
 `rcutils` is a C API consisting of macros, functions, and data structures used through out the ROS 2 code base.
 
 ## Quality Declaration
