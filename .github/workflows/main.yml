@@ -3,7 +3,7 @@ name: Create ROS2 Debs
 on:
   push:
     branches:
-      - main
+      - foxy
   workflow_dispatch:
 
 jobs:
