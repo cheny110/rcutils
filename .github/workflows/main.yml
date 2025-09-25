@@ -1,13 +1,25 @@
-name: Build ROS2 Debian Packages
+name: Create ROS2 Debs
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-  build-debs:
-    runs-on: ubuntu-latest
+  create_debs:
+    runs-on: ubuntu-20.04
+
     steps:
-    - name: Create ROS2 Debs
-      uses: automatika-robotics/create-ros-debs-action@v1
-      with:
-        dir-name: 'release'
-        ros-versions-matrix: 'foxy'   
+      - uses: actions/checkout@v4
+
+      - uses: automatika-robotics/create-ros-debs-action@v2
+        with:
+          source-dir-name: '.' # Optional, default is '.'
+          target-dir-name: 'release'  # Optional, default is 'debs'
+          ros-versions-matrix: 'foxy'  # Optional, this parameter is a space separated list of strings. Defaults to non-EOL ROS2 versions
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: release
+          path: debs # Assuming 'debs' is your target-dir-name 
