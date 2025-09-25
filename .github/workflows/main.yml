@@ -1,10 +1,13 @@
-  - name: Create ROS2 Debs
-  # You may pin to the exact commit or the version.
-  # uses: automatika-robotics/create-ros-debs-action@fd6c0ae3353200d1eb1b89a2ed9cc4535b02a4a4
-    uses: automatika-robotics/create-ros-debs-action@v1
+name: Build ROS2 Debian Packages
+
+on: [push]
+
+jobs:
+  build-debs:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Create ROS2 Debs
+      uses: automatika-robotics/create-ros-debs-action@v1
       with:
-      # Name of the directory for storing generated deb files. Defaults to debs
-        dir-name: # optional, default is debs
-      # Space separated strings of ROS2 version names. e.g 'humble iron jazzy'. Defaults to version which have not reached End-of-Life, check https://endoflife.date/api/ros-2.json
-        ros-versions-matrix: # optional, default is 
-          
+        dir-name: 'release'
+        ros-versions-matrix: 'foxy'   
