@@ -19,7 +19,7 @@ jobs:
           target-dir-name: 'release'  # Optional, default is 'debs'
           ros-versions-matrix: 'foxy'  # Optional, this parameter is a space separated list of strings. Defaults to non-EOL ROS2 versions
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: release
           path: debs # Assuming 'debs' is your target-dir-name 
